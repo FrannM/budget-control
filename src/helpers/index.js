@@ -1,5 +1,6 @@
 export const formatearCantidad = (cantidad) => {
-	return cantidad.toLocaleString("en-US", {
+	const cantAFormatear = cantidadAFormatear(cantidad);
+	return cantAFormatear.toLocaleString("en-US", {
 		style: "currency",
 		currency: "USD",
 	});
@@ -19,4 +20,8 @@ export const formatearFecha = (fecha) => {
 		day: "2-digit",
 	};
 	return fechaFormateada.toLocaleDateString("es-ES", opciones);
+};
+
+export const cantidadAFormatear = (cantidad) => {
+	return Number(cantidad);
 };
