@@ -40,8 +40,8 @@ function App() {
 			const gastosActualizado = gastos.map((gastoActual) =>
 				gastoActual.id === gasto.id ? gasto : gastoActual
 			);
-
 			setGastos(gastosActualizado);
+			setGastoEditar({});
 		} else {
 			gasto.id = generarId();
 			gasto.fecha = Date.now();
@@ -52,6 +52,14 @@ function App() {
 		setTimeout(() => {
 			setModal(false);
 		}, 300);
+	};
+
+	const eliminarGasto = (id) => {
+		const gastosActualizado = gastos.filter(
+			(gastoActual) => gastoActual.id !== id
+		);
+
+		setGastos(gastosActualizado);
 	};
 
 	return (
@@ -66,7 +74,11 @@ function App() {
 			{isValidPresupuesto && (
 				<>
 					<main>
-						<ListadoGastos gastos={gastos} setGastoEditar={setGastoEditar} />
+						<ListadoGastos
+							gastos={gastos}
+							setGastoEditar={setGastoEditar}
+							eliminarGasto={eliminarGasto}
+						/>
 					</main>
 					<div className="nuevo-gasto">
 						<img
@@ -85,6 +97,7 @@ function App() {
 					setAnimarModal={setAnimarModal}
 					guardarGasto={guardarGasto}
 					gastoEditar={gastoEditar}
+					setGastoEditar={setGastoEditar}
 				/>
 			)}
 		</div>
