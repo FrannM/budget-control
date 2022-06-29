@@ -20,18 +20,18 @@ const ControlPresupuesto = ({ presupuesto, gastos }) => {
 	return (
 		<div className="contenedor-presupuesto contenedor sombra dos-columnas">
 			<div>
-				<p>Graphs Here!!</p>
+				<p>Graficos Aqui!!</p>
 			</div>
 
 			<div className="contenido-presupuesto">
 				<p>
-					<span>Budget: </span> {formatearCantidad(presupuesto)}
+					<span>Presupuesto: </span> {formatearCantidad(presupuesto)}
 				</p>
 				<p>
-					<span>Available: </span> {formatearCantidad(disponible)}
+					<span>Disponible: </span> {formatearCantidad(disponible)}
 				</p>
 				<p>
-					<span>Spent: </span> {formatearCantidad(gastado)}
+					<span>Gastado: </span> {formatearCantidad(gastado)}
 				</p>
 			</div>
 		</div>

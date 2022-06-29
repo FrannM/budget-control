@@ -38,7 +38,7 @@ const Modal = ({
 		e.preventDefault();
 
 		if ([nombre, cantidad, categoria].includes("")) {
-			setMensaje("All fields are required");
+			setMensaje("Todos los campos son obligatorios");
 
 			setTimeout(() => {
 				setMensaje("");
@@ -59,46 +59,46 @@ const Modal = ({
 				onSubmit={handleSubmit}
 				className={`formulario ${animarModal ? "animar" : "cerrar"}`}
 			>
-				<legend>{gastoEditar.nombre ? "Edit Expense" : "New Expense"}</legend>
+				<legend>{gastoEditar.nombre ? "Editar Gasto" : "Nuevo Gasto"}</legend>
 				{mensaje && <Mensaje tipo="error">{mensaje}</Mensaje>}
 				<div className="campo">
-					<label htmlFor="nombre">Name Expense</label>
+					<label htmlFor="nombre">Nombre Gasto</label>
 					<input
 						type="text"
 						id="nombre"
-						placeholder="Add name of Expense"
+						placeholder="Agrega el nombre del gasto"
 						value={nombre}
 						onChange={(e) => setNombre(e.target.value)}
 					/>
-					<label htmlFor="cantidad">Price</label>
+					<label htmlFor="cantidad">Precio</label>
 					<input
 						id="cantidad"
 						type="number"
-						placeholder="Add price"
+						placeholder="Agrega la cantidad"
 						value={cantidad}
 						onChange={(e) => setCantidad(e.target.value)}
 					/>
 				</div>
 				<div className="campo">
-					<label htmlFor="categoria">Category</label>
+					<label htmlFor="categoria">Categoria</label>
 					<select
 						id="categoria"
 						value={categoria}
 						onChange={(e) => setCategoria(e.target.value)}
 					>
 						<option value="">Select a category</option>
-						<option value="ahorro">Saving</option>
-						<option value="comida">Food</option>
-						<option value="casa">House</option>
-						<option value="gastos">Various Expenses</option>
-						<option value="ocio">Leisure</option>
+						<option value="ahorro">Ahorros</option>
+						<option value="comida">Comida</option>
+						<option value="casa">Casa</option>
+						<option value="gastos">Gastos Varios</option>
+						<option value="ocio">Ocio</option>
 						<option value="salud">Health</option>
-						<option value="suscripciones">Subscriptions</option>
+						<option value="suscripciones">Suscripciones</option>
 					</select>
 				</div>
 				<input
 					type="submit"
-					value={gastoEditar.nombre ? "Edit Expense" : "Add Expense"}
+					value={gastoEditar.nombre ? "Editar Gasto" : "Agregar Gasto"}
 				/>
 			</form>
 		</div>

@@ -33,7 +33,7 @@ const Gasto = ({ gasto, setGastoEditar }) => {
 	const leadingActions = () => {
 		return (
 			<LeadingActions>
-				<SwipeAction onClick={() => setGastoEditar(gasto)}>Edit</SwipeAction>
+				<SwipeAction onClick={() => setGastoEditar(gasto)}>Editar</SwipeAction>
 			</LeadingActions>
 		);
 	};
@@ -42,7 +42,7 @@ const Gasto = ({ gasto, setGastoEditar }) => {
 		return (
 			<TrailingActions>
 				<SwipeAction onClick={() => console.log("trailing action")}>
-					Delete
+					Eliminar
 				</SwipeAction>
 			</TrailingActions>
 		);
